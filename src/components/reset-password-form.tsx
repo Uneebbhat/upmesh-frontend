@@ -1,7 +1,9 @@
 "use client";
 
-import { cn } from "@/lib/utils";
-import { Button } from "@/components/ui/button";
+import useTogglePassword from "@/hooks/useTogglePassword";
+import PasswordResetSuccess from "./PasswordResetSuccess";
+import useResetPassword from "@/hooks/api/useResetPassword";
+
 import {
   Card,
   CardContent,
@@ -9,19 +11,18 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { cn } from "@/lib/utils";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import useTogglePassword from "@/hooks/useTogglePassword";
+import { Button } from "@/components/ui/button";
 import { Eye, EyeClosed, Loader2 } from "lucide-react";
-import useResetPassword from "@/hooks/api/useResetPassword";
-import PasswordResetSuccess from "./PasswordResetSuccess";
 
 export function ResetPasswordForm({
   className,
   ...props
 }: React.ComponentProps<"div">) {
   const { togglePassword, handleTogglePassword } = useTogglePassword();
-  const { formData, loading, success, handleOnChange, handleOnSubmit } =
+  const { loading, success, formData, handleOnChange, handleOnSubmit } =
     useResetPassword();
 
   if (success) {

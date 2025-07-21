@@ -1,11 +1,9 @@
 "use client";
 
-import React, { useState } from "react";
 import { X } from "lucide-react";
+import React, { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
 
 export default function MultiInputSkills() {
   const [skills, setSkills] = useState<string[]>([]);

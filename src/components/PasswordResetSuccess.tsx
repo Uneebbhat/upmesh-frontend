@@ -1,6 +1,7 @@
 "use client";
 
-import React, { useRef } from "react";
+import Link from "next/link";
+
 import {
   Card,
   CardContent,
@@ -8,13 +9,14 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { CheckCircle2, KeyRound } from "lucide-react";
+import React, { useRef } from "react";
 import { Button } from "@/components/ui/button";
-import Link from "next/link";
+import { CheckCircle2, KeyRound } from "lucide-react";
 import { Confetti, type ConfettiRef } from "@/components/magicui/confetti";
 
 const ResetPasswordSuccess = () => {
   const confettiRef = useRef<ConfettiRef>(null);
+
   return (
     <>
       <Confetti
