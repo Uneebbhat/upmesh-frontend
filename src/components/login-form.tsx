@@ -1,9 +1,9 @@
 "use client";
 
-// External Imports
 import Link from "next/link";
-import { Eye, EyeClosed, Loader2 } from "lucide-react";
-// Internal Imports
+import useLogin from "@/hooks/api/useLogin";
+import useTogglePassword from "@/hooks/useTogglePassword";
+
 import {
   Card,
   CardContent,
@@ -12,18 +12,17 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
-import useLogin from "@/hooks/api/useLogin";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
-import useTogglePassword from "@/hooks/useTogglePassword";
+import { Eye, EyeClosed, Loader2 } from "lucide-react";
 
 export function LoginForm({
   className,
   ...props
 }: React.ComponentProps<"div">) {
   const { togglePassword, handleTogglePassword } = useTogglePassword();
-  const { formData, loading, handleOnChange, handleOnSubmit } = useLogin();
+  const { loading, formData, handleOnChange, handleOnSubmit } = useLogin();
 
   return (
     <div className={cn("flex flex-col gap-6", className)} {...props}>

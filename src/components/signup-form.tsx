@@ -1,8 +1,9 @@
 "use client";
 
-import { useState } from "react";
 import Link from "next/link";
-import { ArrowLeft, Eye, EyeClosed, Loader2 } from "lucide-react";
+import useSignup from "@/hooks/api/useSignup";
+import useTogglePassword from "@/hooks/useTogglePassword";
+
 import {
   Card,
   CardContent,
@@ -10,14 +11,14 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { useState } from "react";
+import { cn } from "@/lib/utils";
+import { Role } from "@/interfaces/User";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
-import useSignup from "@/hooks/api/useSignup";
 import { ShineBorder } from "./magicui/shine-border";
-import useTogglePassword from "@/hooks/useTogglePassword";
-import { Role } from "@/interfaces/User";
+import { ArrowLeft, Eye, EyeClosed, Loader2 } from "lucide-react";
 
 export function SignupForm({
   className,
@@ -25,8 +26,8 @@ export function SignupForm({
 }: React.ComponentProps<"div">) {
   const { togglePassword, handleTogglePassword } = useTogglePassword();
   const {
-    formData,
     loading,
+    formData,
     handleOnChange,
     handleOnFileChange,
     handleOnSubmit,

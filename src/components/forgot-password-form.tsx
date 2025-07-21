@@ -14,13 +14,12 @@ import { Loader2 } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
-// import useForgotPassword from "@/hooks/api/useForgotPassword";
 
 export function ForgotPasswordForm({
   className,
   ...props
 }: React.ComponentProps<"div">) {
-  const { formData, loading, handleOnChange, handleOnSubmit } =
+  const { loading, formData, handleOnChange, handleOnSubmit } =
     useForgotPassword();
 
   return (
