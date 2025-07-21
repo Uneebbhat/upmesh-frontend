@@ -1,10 +1,14 @@
-import { LoginFormDataProps } from "@/interfaces/User";
-import useFormHandler from "../useFormHandler";
-import { HandleOnSubmit } from "@/types/form";
 import axios from "axios";
+import useFormHandler from "../useFormHandler";
+
 import { toast } from "sonner";
+import { HandleOnSubmit } from "@/types/form";
+import { LoginFormDataProps } from "@/interfaces/User";
+import { useRouter } from "next/navigation";
+import { resolve } from "path";
 
 const useLogin = () => {
+  const router = useRouter();
   const { formData, loading, setFormData, setLoading, handleOnChange } =
     useFormHandler<LoginFormDataProps>({
       email: "",
@@ -16,14 +20,19 @@ const useLogin = () => {
     setLoading(true);
 
     try {
-      const { data } = await axios.post("/api/login", formData);
-      console.log(data);
-      toast.success(data.message);
+      // const { data } = await axios.post("/api/login", formData);
+      // console.log(data);
+      // toast.success(data.message);
+
+      await new Promise((resolve) => setTimeout(resolve, 2000));
+      console.log(formData);
+
+      router.push("/");
     } catch (error: unknown) {
-      if (axios.isAxiosError(error)) {
-        console.log(error);
-        toast.error(error.response?.data.error);
-      }
+      // if (axios.isAxiosError(error)) {
+      //   toast.error(error.response?.data.error);
+      // }
+      console.log(error);
     } finally {
       setLoading(false);
     }

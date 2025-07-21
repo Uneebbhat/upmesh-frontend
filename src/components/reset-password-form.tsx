@@ -41,13 +41,13 @@ export function ResetPasswordForm({
           <form onSubmit={handleOnSubmit}>
             <div className="flex flex-col gap-6">
               <div className="grid gap-2">
-                <Label htmlFor="password">Password</Label>
+                <Label htmlFor="newPassword">Password</Label>
                 <div className="relative">
                   <Input
-                    id="password"
+                    id="newPassword"
                     type={togglePassword ? "text" : "password"}
-                    name="password"
-                    value={formData.password}
+                    name="newPassword"
+                    value={formData.newPassword}
                     onChange={handleOnChange}
                     placeholder="••••••••"
                     required
@@ -69,7 +69,7 @@ export function ResetPasswordForm({
               <Button
                 type="submit"
                 className="w-full"
-                disabled={loading || !formData.password}
+                disabled={loading || !formData.newPassword}
               >
                 {loading ? (
                   <>
