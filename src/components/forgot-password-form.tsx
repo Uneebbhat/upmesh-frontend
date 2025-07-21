@@ -1,7 +1,7 @@
 "use client";
 
-import { cn } from "@/lib/utils";
-import { Button } from "@/components/ui/button";
+import useForgotPassword from "@/hooks/api/useForgotPassword";
+
 import {
   Card,
   CardContent,
@@ -9,17 +9,19 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { cn } from "@/lib/utils";
+import { Loader2 } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { Button } from "@/components/ui/button";
 // import useForgotPassword from "@/hooks/api/useForgotPassword";
-import { Loader2 } from "lucide-react";
 
 export function ForgotPasswordForm({
   className,
   ...props
 }: React.ComponentProps<"div">) {
-  // const { formData, loading, handleOnChange, handleOnSubmit } =
-  //   useForgotPassword();
+  const { formData, loading, handleOnChange, handleOnSubmit } =
+    useForgotPassword();
 
   return (
     <div className={cn("flex flex-col gap-6", className)} {...props}>
@@ -32,9 +34,7 @@ export function ForgotPasswordForm({
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <form
-          // onSubmit={handleOnSubmit}
-          >
+          <form onSubmit={handleOnSubmit}>
             <div className="flex flex-col gap-6">
               {/* Email */}
               <div className="grid gap-1.5">
@@ -46,15 +46,15 @@ export function ForgotPasswordForm({
                   id="email"
                   type="email"
                   name="email"
-                  // value={formData.email}
-                  // onChange={handleOnChange}
+                  value={formData.email}
+                  onChange={handleOnChange}
                   placeholder="johndoe@umt.edu.pk"
                   required
                 />
               </div>
 
               {/* Reset Submit Button */}
-              {/* <Button
+              <Button
                 type="submit"
                 className="w-full"
                 disabled={loading || !formData.email}
@@ -67,7 +67,7 @@ export function ForgotPasswordForm({
                 ) : (
                   "Send email"
                 )}
-              </Button> */}
+              </Button>
             </div>
           </form>
         </CardContent>

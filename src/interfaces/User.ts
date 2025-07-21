@@ -1,5 +1,16 @@
 import { Document, Types } from "mongoose";
 
+export enum Role {
+  developer = "Developer",
+  designer = "Designer",
+  marketer = "Marketer",
+  contentCreator = "Content Creator",
+  freelancer = "Freelancer",
+  startupOwner = "Startup Owner",
+  mentor = "Mentor",
+  other = "Other",
+}
+
 export interface IUser extends Document {
   username: string;
   email: string;
@@ -32,13 +43,10 @@ export interface LoginFormDataProps {
   password: string;
 }
 
-export enum Role {
-  developer = "Developer",
-  designer = "Designer",
-  marketer = "Marketer",
-  contentCreator = "Content Creator",
-  freelancer = "Freelancer",
-  startupOwner = "Startup Owner",
-  mentor = "Mentor",
-  other = "Other",
+export interface ForgotPasswordFormProps {
+  email: string;
+}
+
+export interface ResetPasswordFormProps {
+  newPassword: string;
 }

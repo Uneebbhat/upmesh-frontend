@@ -6,8 +6,10 @@ import useFormHandler from "../useFormHandler";
 import { toast } from "sonner";
 import { HandleOnSubmit } from "@/types/form";
 import { Role, SignupFormDataProps } from "@/interfaces/User";
+import { useRouter } from "next/navigation";
 
 const useSignup = () => {
+  const router = useRouter();
   const {
     formData,
     loading,
@@ -33,6 +35,8 @@ const useSignup = () => {
       // console.log(data);
       // toast.success(data.message);
       console.log(formData);
+
+      router.push("/");
     } catch (error: unknown) {
       // if (axios.isAxiosError(error)) {
       //   toast.error(error.response?.data.error);
