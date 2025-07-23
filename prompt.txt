@@ -1,0 +1,70 @@
+Create a responsive Home Page using **Next.js (App Router)** and **Tailwind CSS**, inspired by **Upwork's landing page**. It should include the following sections with professionally structured HTML and Tailwind classes:
+
+---
+
+🔷 **1. Hero Section**
+
+- Full-screen hero with a background image (`bg-cover`, `bg-center`)
+- Overlay text on top
+- Headline (H1): "Find the Right Talent. Right Now."
+- Subheading: "Connect with skilled freelancers and indie startups to bring your ideas to life — fast, flexible, and on your terms."
+- Two CTA buttons:
+  - Primary: “Get Started”
+  - Secondary: “Browse Talent”
+- Tagline row below CTAs:  
+  *Design · Web Development · Content Writing · Marketing · AI Assistants · and more*
+
+📐 Use padding: `px-5` on mobile, `px-20` on desktop, `pt-24`, `pb-32`. Image should be customizable via `style={{ backgroundImage: 'url(...)' }}`
+
+---
+
+🔷 **2. Trusted Logos (Optional)**
+
+- A row of 4–6 company logos in grayscale
+- Optional label: “Trusted by teams at”
+
+---
+
+🔷 **3. How It Works**
+
+- 3-step grid:
+  1. Post a Job / Startup Idea
+  2. Get Matched with Freelancers or Students
+  3. Collaborate and Build
+- Use icons or simple illustrations
+- Add short headlines and 1-sentence descriptions
+
+---
+
+🔷 **4. Categories Section**
+
+- Grid of cards (6–8) showcasing different talent categories
+- Each card with an icon, title (e.g., "Web Development"), and a short label
+
+---
+
+🔷 **5. Testimonials (Optional)**
+
+- 2–3 short client quotes with avatar, name, and role
+- Use `text-muted-foreground` and italic styles
+
+---
+
+🔷 **6. Call to Action (Final CTA Banner)**
+
+- Full-width banner with a solid background color
+- Large headline: “Ready to Build Something Great?”
+- Subheading: “Create your account and start connecting today.”
+- Single CTA Button: “Join Now”
+
+---
+
+✅ General Styling Rules:
+- Use Tailwind CSS utility classes
+- Font sizes:
+  - H1: `text-4xl` on mobile, `text-6xl` on desktop
+  - Body: `text-base` (16px)
+- Use consistent padding (`px-5` or `px-6`), `max-w-7xl` containers
+- Responsive layout (mobile-first)
+- Use semantic HTML and Next.js best practices
+- Use Shadcn UI `Button` component if available
