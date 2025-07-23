@@ -121,3 +121,24 @@
     @apply bg-background text-foreground;
   }
 }
+
+.hero-section {
+  background-image: url("/hero-img.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 8px;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    background-position: right;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-section {
+    background-size: auto;
+    background-position: right;
+  }
+}
