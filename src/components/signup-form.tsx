@@ -40,7 +40,7 @@ export function SignupForm({
   const goBack = () => setStep(1);
 
   return (
-    <div className={cn("w-full max-w-xl mx-auto", className)} {...props}>
+    <div className={cn("w-full mx-auto", className)} {...props}>
       <Card className="relative overflow-hidden">
         <ShineBorder shineColor={["#A07CFE", "#FE8FB5", "#FFBE7B"]} />
         <CardHeader className="space-y-1">
@@ -75,16 +75,29 @@ export function SignupForm({
                   />
                 </div>
 
-                {/* Username */}
+                {/* First Name */}
                 <div className="grid gap-1.5">
-                  <Label htmlFor="username">Username</Label>
+                  <Label htmlFor="firstName">First Name</Label>
                   <Input
-                    id="username"
+                    id="firstName"
                     type="text"
-                    name="username"
-                    value={formData.username}
+                    name="firstName"
+                    value={formData.firstName}
                     onChange={handleOnChange}
-                    placeholder="John Doe"
+                    placeholder="John"
+                    required
+                  />
+                </div>
+                {/* Last Name */}
+                <div className="grid gap-1.5">
+                  <Label htmlFor="lastName">Last Name</Label>
+                  <Input
+                    id="lastName"
+                    type="text"
+                    name="lastName"
+                    value={formData.lastName}
+                    onChange={handleOnChange}
+                    placeholder="Doe"
                     required
                   />
                 </div>
