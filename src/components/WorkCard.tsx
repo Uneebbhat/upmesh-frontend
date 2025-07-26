@@ -2,7 +2,6 @@
 
 import React from "react";
 import Link from "next/link";
-// import handleLike from "@/helper/handleLike";
 
 import {
   Card,
@@ -13,8 +12,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Heart } from "lucide-react";
-import { ITags, IWorkCard } from "@/interfaces/Work";
-// import { IFindWorkProps } from "@/interface";
+import { IWorkCard } from "@/interfaces/Work";
 
 const WorkCard = ({ workData }: { workData: IWorkCard }) => {
   return (
