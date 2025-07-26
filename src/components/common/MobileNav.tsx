@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 import {
   Sheet,
@@ -13,7 +14,6 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import Link from "next/link";
 import { Menu } from "lucide-react";
 
 const navMenuItems = [
@@ -22,7 +22,7 @@ const navMenuItems = [
     items: [
       {
         title: "Browse Jobs",
-        link: "#",
+        link: "/find-work/browse-jobs",
         description: "Discover job postings and freelance opportunities.",
       },
       {

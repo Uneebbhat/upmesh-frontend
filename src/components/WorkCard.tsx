@@ -2,6 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
+import handleLikeJob from "@/helper/handleLike";
 
 import {
   Card,
@@ -11,10 +12,11 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Heart } from "lucide-react";
+import { Bookmark, Heart, Save } from "lucide-react";
 import { IWorkCard } from "@/interfaces/Work";
 
 const WorkCard = ({ workData }: { workData: IWorkCard }) => {
+  const { filled, handleLike } = handleLikeJob();
   return (
     <Link
       href={`/find-work/browse-jobs/${workData.id}`}
@@ -26,9 +28,9 @@ const WorkCard = ({ workData }: { workData: IWorkCard }) => {
       >
         <div
           className="cursor-pointer hover:bg-gray-50 p-2 rounded-full absolute right-4 top-2 z-10"
-          // onClick={handleLike}
+          onClick={(e: any) => handleLike(e)}
         >
-          <Heart />
+          <Bookmark fill={filled ? "red" : "white"} />
         </div>
         <CardHeader>
           <div className="flex items-start justify-between">

@@ -6,12 +6,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 const BasicProfileInfo = () => {
   return (
     <>
-      <div className="border p-4 hidden lg:flex items-center rounded-lg gap-4">
-        {/* <Card className="w-full">
-          <CardHeader className="flex flex-col text-center items-center justify-center gap-4 px-2">
-            
-          </CardHeader>
-        </Card> */}
+      <div className="border p-4 hidden lg:flex items-center bg-card text-card-foreground gap-6 rounded-xl border shadow-sm">
         <Avatar className="w-14 h-14">
           <AvatarImage src="https://github.com/shadcn.png" alt="Profile Img" />
           <AvatarFallback className="text-2xl">CN</AvatarFallback>

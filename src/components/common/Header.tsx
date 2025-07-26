@@ -1,9 +1,10 @@
 import React from "react";
-import MobileNav from "./MobileNav";
 import Link from "next/link";
 import Image from "next/image";
-import { NavigationMenuItems } from "../NavigationMenuItems";
+import MobileNav from "./MobileNav";
+
 import { Button } from "../ui/button";
+import { NavigationMenuItems } from "../NavigationMenuItems";
 
 const Header = () => {
   return (
@@ -25,11 +26,17 @@ const Header = () => {
           </div>
           {/* Right: Auth Buttons */}
           <div className="items-center gap-5 hidden md:flex">
-            <Button variant="link">Log in</Button>
-            <Button>Sign up</Button>
+            <Button variant="link" asChild>
+              <Link href="/login">Log in</Link>
+            </Button>
+            <Button asChild>
+              <Link href={"/signup"}>Sign up</Link>
+            </Button>
           </div>
           <div className="block md:hidden">
-            <Button variant={"link"}>Sign up</Button>
+            <Button variant={"link"} asChild>
+              <Link href={"/signup"}>Sign up</Link>
+            </Button>
           </div>
         </div>
       </header>

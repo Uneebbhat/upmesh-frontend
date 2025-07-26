@@ -9,6 +9,7 @@ import { Metadata } from "next";
 import { Suspense } from "react";
 import { Input } from "@/components/ui/input";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Upmesh | Find work",
@@ -111,7 +112,20 @@ export default function BrowseJobsPage() {
                     </Suspense>
                   </div>
                 </TabsContent>
-                <TabsContent value="savedJob">Saved jobs here</TabsContent>
+                <TabsContent value="savedJob">
+                  <div className="flex flex-col items-center justify-center h-full py-8">
+                    <Image
+                      src={"/save-job.svg"}
+                      alt="Saved Jobs"
+                      width={300}
+                      height={300}
+                    />
+                    <span className="mt-4 text-center">
+                      Keep track of jobs you're interested in. Select the
+                      bookmark icon on a job post to save it for later.
+                    </span>
+                  </div>
+                </TabsContent>
               </Tabs>
             </div>
           </div>

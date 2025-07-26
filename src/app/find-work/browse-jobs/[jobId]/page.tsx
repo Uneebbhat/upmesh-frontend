@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 export default function JobDetailsPage() {
   return (
     <>
-      <section className="py-10 px-4 md:px-10 max-w-4xl mx-auto">
+      <section className="py-5 max-w-4xl mx-auto">
         <div className="flex flex-col gap-8">
           {/* Job Title & Meta */}
           <div className="space-y-2">
