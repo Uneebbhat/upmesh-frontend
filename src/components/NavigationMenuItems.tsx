@@ -17,7 +17,7 @@ const navMenuItems = [
     items: [
       {
         title: "Browse Jobs",
-        link: "#",
+        link: "/find-work/browse-jobs",
         description: "Discover job postings and freelance opportunities.",
       },
       {
