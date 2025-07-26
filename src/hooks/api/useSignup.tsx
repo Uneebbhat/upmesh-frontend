@@ -18,7 +18,8 @@ const useSignup = () => {
     handleOnChange,
     handleOnFileChange,
   } = useFormHandler<SignupFormDataProps>({
-    username: "",
+    firstName: "",
+    lastName: "",
     email: "",
     password: "",
     profilePic: null,

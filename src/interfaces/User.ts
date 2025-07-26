@@ -30,7 +30,8 @@ export interface IUserDTO {
 }
 
 export interface SignupFormDataProps {
-  username: string;
+  firstName: string;
+  lastName: string;
   email: string;
   password: string;
   profilePic: File | string | null;
