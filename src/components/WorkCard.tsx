@@ -1,10 +1,9 @@
 "use client";
 
-// External Imports
 import React from "react";
 import Link from "next/link";
-import { Heart } from "lucide-react";
-// Internal Imports
+// import handleLike from "@/helper/handleLike";
+
 import {
   Card,
   CardContent,
@@ -13,19 +12,23 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import handleLike from "@/helper/handleLike";
-import { IFindWorkProps } from "@/interface";
+import { Heart } from "lucide-react";
+import { ITags, IWorkCard } from "@/interfaces/Work";
+// import { IFindWorkProps } from "@/interface";
 
-const WorkCard = ({ workData }: { workData: IFindWorkProps }) => {
+const WorkCard = ({ workData }: { workData: IWorkCard }) => {
   return (
-    <Link href={`/job/${workData.id}`} className="relative block">
+    <Link
+      href={`/find-work/browse-jobs/${workData.id}`}
+      className="relative block w-full"
+    >
       <Card
-        className="border-gray-200 transition-all relative"
+        className="border-gray-200 transition-all relative w-full"
         key={workData.id}
       >
         <div
           className="cursor-pointer hover:bg-gray-50 p-2 rounded-full absolute right-4 top-2 z-10"
-          onClick={handleLike}
+          // onClick={handleLike}
         >
           <Heart />
         </div>
@@ -53,12 +56,12 @@ const WorkCard = ({ workData }: { workData: IFindWorkProps }) => {
 
         <CardFooter className="flex flex-col items-start">
           <div className="flex flex-wrap items-center gap-3">
-            {workData.tags.map((tag: any) => (
+            {(workData.tags ?? []).map((tag, idx) => (
               <span
-                key={tag}
-                className="inline-flex items-center bg-gray-300 py-1 px-4 rounded-full text-sm"
+                key={typeof tag === "string" ? tag : idx}
+                className="inline-flex items-center bg-gray-100 text-black py-1 px-4 rounded-full text-sm"
               >
-                {tag}
+                {typeof tag === "string" ? tag : tag}
               </span>
             ))}
           </div>

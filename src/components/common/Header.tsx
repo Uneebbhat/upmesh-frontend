@@ -9,7 +9,7 @@ const Header = () => {
   return (
     <>
       <header className="">
-        <div className="flex items-center justify-between gap-5 max-w-[1600px] mx-auto px-5 py-4">
+        <div className="flex items-center justify-between gap-5 py-4">
           {/* Left: Logo and MobileNav */}
           <div className="flex items-center gap-4">
             <div className="block md:hidden">
