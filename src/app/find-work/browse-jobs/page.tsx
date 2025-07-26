@@ -5,13 +5,6 @@ import BasicProfileInfo from "@/components/BrowseJobs/BasicProfileInfo";
 import BrowseJobsCardSkeleton from "@/components/BrowseJobs/BrowseJobsCardSkeleton";
 import BasicProfileInfoSkeleton from "@/components/BrowseJobs/BasicProfileInfoSkeleton";
 
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
 import { Metadata } from "next";
 import { Suspense } from "react";
 import { Input } from "@/components/ui/input";
